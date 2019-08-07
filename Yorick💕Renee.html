@@ -43,6 +43,8 @@
             color: rgb(253, 99, 125);
         }
     </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/css-doodle.min.js"></script>
 </head>
 
 <body style="background-image: url(&quot;bg.jpg&quot;);">
@@ -53,6 +55,37 @@
             <b id="d">176</b> Days <b id="h">16</b> Hours <b id="m">48</b> Minutes <b id="s">34</b> Seconds
         </div>
     </div>
+    <css-doodle grid="5">
+        :doodle {
+          @grid: 10 / 100%; 
+        }
+        background: @pick(
+          #ff0198, #8156a8, #ff6d00, #ff75e4
+        );
+      
+        transform: translate(
+          @rand(-50vw, 50vw),
+          @rand(-50vh, 50vh)
+        );
+      
+        @size: 3.5vmin;
+        @shape: heart;
+        @place-cell: 50% 50%;
+      
+        animation-name: explosion;
+        animation-iteration-count: infinite;
+        animation-direction: reverse;
+        animation-duration: calc(@rand(2s, 5s, .1));
+        animation-delay: calc(@rand(-5s, -1s, .1));
+        animation-timing-function: 
+          cubic-bezier(.84, .02, 1, 1);
+      
+        @keyframes explosion {
+          0% { opacity: 0; }
+          70% { opacity: 1; }
+          100% { transform: translate(0, 0); }
+        }
+    </css-doodle>
 
     <script>
         function timer() {
