@@ -42,7 +42,6 @@
             color: rgb(253, 99, 125);
         }
     </style>
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/css-doodle.min.js"></script>
 </head>
 
@@ -118,31 +117,6 @@
         check();
         timer();
         setInterval(timer, 1000);
-        
-        // 爱心
-        var d = '<div class=\'maple\'>💕<div>';
-        setInterval(function () {
-            var f = $(document).width();
-            var e = Math.random() * f; // 爱心的定位left值
-            var o = 0.25 + Math.random(); // 爱心的透明度
-            var fon = 25 + Math.random() * 15; // 爱心大小
-            var l = e - 100 + 400 * Math.random(); // 爱心的横向位移
-            var k = 12000 + 6000 * Math.random();
-            var deg = Math.random() * 360; // 爱心的方向
-            $(d).clone().appendTo('#header').css({
-                top: 0,
-                left: e + 'px',
-                opacity: 1,
-                transform: 'rotate(' + deg + 'deg)',
-                'font-size': fon,
-            }).animate({
-                top: '2160px',
-                left: l + 'px',
-                opacity: 0.3,
-            }, k, 'linear', function () {
-                $(this).remove();
-            });
-        }, 750);
     </script>
 </body>
 </html>
